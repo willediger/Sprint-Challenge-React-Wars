@@ -10,15 +10,11 @@ class App extends Component {
     };
   }
 
-  // getHomeWorld = charName => {
-  //   const charIdx = this.state.starwarsChars.map(e => e.name).indexOf(charName)
-  //   const homeWorldURL = this.state.starwarsChars[charIdx].homeworld;
-  //   const homeWorld = this.getResults(homeWorldURL).name
-  //   // console.log(homeWorld)
-  //   console.log(JSON.stringify(homeWorld))
-  //   return homeWorld
-  //   // return homeWorld;
-  // }
+  getHomeWorld = charName => {
+    const charIdx = this.state.starwarsChars.map(e => e.name).indexOf(charName)
+    const homeWorldURL = this.state.starwarsChars[charIdx].homeworld;
+    this.getResults(charIdx, homeWorldURL);
+  }
 
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
@@ -26,18 +22,24 @@ class App extends Component {
 
   capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
 
-  // getResults = URL => {
-  //   fetch(URL)
-  //   .then(res => {
-  //     return res.json();
-  //   })
-  //   .then(data => {
-  //     return data;
-  //   })
-  //   .catch(err => {
-  //     throw new Error(err);
-  //   });
-  // }
+  getResults = (charIdx, URL) => {
+    // let result;
+    fetch(URL)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState(prevState => {
+          const newState = prevState.starwarsChars;
+          newState[charIdx].homeWorldName = data.name
+          return { starwarsChars: newState }
+        })
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+    // return result;
+  }
 
   getCharacters = URL => {
     // feel free to research what this code is doing.
