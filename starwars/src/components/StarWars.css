@@ -16,10 +16,25 @@ h2 {
 }
 
 .character ul {
-  margin-left: 20px !important;
+  margin-left: 0px !important;
 }
 
 .attributes {
   margin-top: 0 !important;
   padding-top: 8px !important;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+ul.attributes {
+  list-style-type: none;
+}
+
+.attributes li {
+	margin: 0 !important;
+	padding: 5px 0 5px 50px !important;
+	background-image: url('https://cdn.pixabay.com/photo/2017/06/03/18/21/star-wars-2369317_960_720.png');
+	background-repeat: no-repeat !important;
+	background-position: left center !important;
+  background-size: 40px !important;
 }
