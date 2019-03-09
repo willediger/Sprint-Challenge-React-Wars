@@ -13,7 +13,7 @@ const Character = props => {
         <li>Eye Color: {props.capitalize(char.eye_color)}</li>
         <li>Birth Year: {props.capitalize(char.birth_year)}</li>
         <li>Gender: {props.capitalize(char.gender)}</li>
-        {/* <li>Home World: {props.getHomeWorld(char.name)}</li> */}
+        <li>Home World: {char.homeWorldName}</li>
       </ul>
     </>
   );

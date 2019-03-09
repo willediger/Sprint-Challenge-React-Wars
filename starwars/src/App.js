@@ -50,7 +50,14 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ starwarsChars: data.results });
+        this.setState(
+          { starwarsChars: data.results },
+          () => {
+            this.state.starwarsChars.forEach((e, i) => {
+              this.getHomeWorld(e.name);
+            })
+          }
+        )
       })
       .catch(err => {
         throw new Error(err);
