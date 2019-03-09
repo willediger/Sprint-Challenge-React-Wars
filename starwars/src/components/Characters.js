@@ -3,15 +3,17 @@ import Character from './Character';
 import './StarWars.css';
 
 const Characters = props => (
-  <ul className="ui list">
-    <li>
-      {props.characters.map(c => (
+  <ul className="character-list">
+    {props.characters.map(c => (
+      <li className="character">
         <Character
           character={c}
           key={c.url}
+          capitalize={props.capitalize}
+          getHomeWorld={props.getHomeWorld}
         />
-      ))}
-    </li>
+      </li>
+    ))}
   </ul>
 );
 

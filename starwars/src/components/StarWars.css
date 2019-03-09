@@ -1,0 +1,25 @@
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0 !important;
+}
+
+.character-list {
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-left: 3px !important;
+}
+
+.character {
+  margin-top: 30px !important;
+}
+
+.character ul {
+  margin-left: 20px !important;
+}
+
+.attributes {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}

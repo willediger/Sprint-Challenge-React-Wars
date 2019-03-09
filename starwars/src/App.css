@@ -1,8 +1,26 @@
 .App {
-  text-align: center;
+  width: 40%;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.75);
+  padding-left: 30px;
+  padding-top: 23px;
+  padding-bottom: 30px;
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+
+
+h1 {
+  font-size: 3.6rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
